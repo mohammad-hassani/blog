@@ -1,20 +1,20 @@
 import type { SiteConfig } from "@/lib/types";
 const siteConfig: SiteConfig = {
-  avatar: "/avatar.png",
-  siteUrl: "https://nextjs-mdx-blog-theme.vercel.app",
-  siteName: "Alex Carpenter",
+  avatar: "https://avatars.githubusercontent.com/u/59317946?v=4",
+  siteUrl: "https://hasani.id.ir",
+  siteName: "Mohammad Hassani",
   siteDescription:
-    "Starter template for a personal website blog, built with Next.js, MDX, and Tailwind CSS.",
-  siteThumbnail: "/og-image.png",
+    "Tis is a personal website blog, built with Next.js, MDX, and Tailwind CSS.",
+  siteThumbnail: "https://hasani.id.ir/assets/bl33hIcon-01f3a8f7.png?raw=true",
   nav: [
     { label: "Posts", href: "/posts" },
     { label: "About", href: "/about" },
   ],
   social: {
-    github: "https://github.com/alexcarpenter",
-    twitter: "https://twitter.com/hyrbid_alex",
-    linkedin: "https://www.linkedin.com/in/imalexcarpenter/",
-    instagram: "https://www.instagram.com/alexcarp/",
+    github: "https://github.com/mohammad-hassani",
+    twitter: "https://twitter.com/Mistr_Mohandes",
+    linkedin: "https://www.linkedin.com/in/mohammad-hassani-495b9117b/",
+    instagram: "https://www.instagram.com/hassani_mohammad_mh/",
   },
 };
 export default siteConfig;

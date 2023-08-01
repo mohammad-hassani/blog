@@ -6,6 +6,6 @@ module.exports = {
   },
   images: {
     loader: 'akamai',
-    domains: ['avatars.githubusercontent.com'],
+    path: ['avatars.githubusercontent.com'],
   },
 }

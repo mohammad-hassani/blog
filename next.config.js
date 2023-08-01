@@ -2,7 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
 };
+
 const images = {
+  unoptimized: true,
   domains: ['avatars.githubusercontent.com'],
 };
 

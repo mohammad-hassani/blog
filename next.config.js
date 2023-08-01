@@ -4,8 +4,10 @@ module.exports = {
   nextConfig:{
     reactStrictMode: true,
   },
-  images: {
-    loader: 'akamai',
-    path: ['avatars.githubusercontent.com'],
+  experimental: {
+    images: {
+      loader: 'akamai',
+      path: ['avatars.githubusercontent.com'],
+    },
   },
 }

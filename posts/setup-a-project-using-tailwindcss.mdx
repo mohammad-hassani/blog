@@ -1,0 +1,112 @@
+---
+title: "How to setup a project using tailwindcss for beginners"
+description: "Hi there!
+With [tailwindcss](https://tailwindcss.com/) you can rapidly build modern websites without ever leaving your HTML."
+date: "2023-08-01"
+tags: ['mdx','tailwindcss','html','css','webdev']
+---
+
+Hi there!
+With [tailwindcss](https://tailwindcss.com/) you can rapidly build modern websites without ever leaving your HTML.
+
+to start a project using tailwind follow me!
+
+ 1. Make a folder
+--------------
+if you use linux OS just open you'r terminal and type:
+```bash
+mkdir tailwind_dev
+```
+and then go to tailwind_dev folder
+```bash
+cd tailwind_dev
+```
+2. Make package.json file
+-------------
+to make package.json file you need npm ;
+if you don't have npm just follow [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) link.
+after that,in you'r terminal type
+```bash
+npm init -y
+```
+now if you check the tailwind_dev folder; you'll see the package.json file!
+3. Install tailwindcss
+------------
+for install tailwind just type
+```bash
+npm install tailwindcss --save
+```
+4. Make public and src folder
+------------
+now its time to make two folder
+in you'r terminal type
+```bash
+mkdir public
+```
+and
+```bash
+mkdir src
+```
+5. Make css file
+-----------
+first with 
+```bash
+cd src
+```
+enter to you'r src folder and with 
+```bash
+touch style.css
+```
+make you'r css file.
+6. Make html file
+-----------
+then type 
+```bash
+cd ../public
+```
+in you'r terminal to enter public folder and type 
+```bash
+touch index.html
+```
+7. Import basics
+-----------
+open you'r IDE  and then open you'r style.css file in src folder and write this codes to import tailwind  base,components and utilities
+```css
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+```
+save you'r changes !
+8. Change package.json for install basics
+-----------
+open you'r package.json file
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/7onoqtzfijoa7xbx0mtj.png)
+
+and replace 
+```javascript
+"test": "echo \"Error: no test specified\" && exit 1"
+```
+with
+```javascript
+"build-css": "tailwindcss build -i ./src/style.css -o ./public/style.css"
+``` 
+9. Npm run
+-----------
+it's almost done, just type ```bash
+npm run build-css
+```
+in you'r terminal.
+after that, if you check the public folder you can see the style.css that include tailwindcss class !
+10. Last thing for done
+----------
+just open you'r html file and make you'r project,
+to link style.css to you'r html file;in head tag write this code:
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+#### _Be happy!_
+
+
+<a href="https://www.buymeacoffee.com/mohammadhassani">buymeacoffee!</a>

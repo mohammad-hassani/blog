@@ -1,0 +1,130 @@
+---
+title: "Do you know about git flow? all in one post!"
+description: "Hi there!
+I wanna talk about git power supplement that named git flow"
+date: "2023-08-01"
+tags: ['mdx','git','github','gitflow',webdev]
+---
+
+Hi there!
+I wanna talk about git power supplement that named git flow!
+
+git-flow are a set of git extensions to provide high-level repository operations for Vincent Driessen's branching model.
+in this post I wanna shows the basic usage and effect of git-flow operations
+
+# Setup 
+ important! before using git flow you need a working git installation
+
+#### Setup in mac OS
+```bash
+$ brew install git-flow-avh
+```
+#### Setup in macports
+```bash
+$ port install git-flow-avh
+```
+#### Setup in linux
+```bash
+$ apt-get install git-flow
+```
+#### Setup in windows
+```bash
+$ wget -q -O - --no-check-certificate https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
+```
+# Getting started
+Git flow needs to be initialized in order to customize your project setup.
+#### Initialize
+Start using git-flow by initializing it inside an existing git repository:
+```bash
+git flow init
+```
+You'll have to answer a few questions regarding the naming conventions for your branches.
+It's recommended to use the default values.
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/lkd2bjrfbvbrfpu5i18q.jpeg)
+# Features
+@@Develop new features for upcoming releases@@
+@@Typically exist in developers repos only@@
+#### Start a new feature
+Development of new features starting from the 'develop' branch.
+Start developing a new feature with
+```bash
+git flow feature start MYFEATURE
+```
+This action creates a new feature branch based on 'develop' and switches to it
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/wnyhsezwbfgm5pq6rec9.png)
+#### Finish up a feature
+Finish the development of a feature. This action performs the following;
+   1. *Merges MYFEATURE into 'develop'*
+   2. *Removes the feature branch*
+   3. *Switches back to 'develop' branch*
+```bash
+git flow feature finish MYFEATURE
+```
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ijb5p43gxivpy9udng7o.png)
+#### Publish a feature
+Are you developing a feature in collaboration?
+Publish a feature to the remote server so it can be used by other users.
+```bash
+git flow feature publish MYFEATURE
+```
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/d8fvc5ffld9wanxgjydm.png)
+#### Getting a published feature
+Get a feature published by another user.
+```bash
+git flow feature pull origin MYFEATURE
+```
+You can track a feature on origin by using
+```bash
+git flow feature track MYFEATURE
+```
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/lovj5ematw5ekko0otnm.png)
+# Make a release
+1.Support preparation of a new production release
+2.Allow for minor bug fixes and preparing meta-data for a release
+#### Start a release
+To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch.
+```bash
+git flow release start RELEASE [BASE]
+```
+You can optionally supply a `[BASE]` commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/6ll09ecc272gaxhject9.png)
+It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
+```bash
+git flow release publish RELEASE
+```
+(You can track a remote release with the
+`git flow release track RELEASE` command)
+#### Finish up a release
+Finishing a release is one of the big steps in git branching. It performs several actions:
+1.Merges the release branch back into 'master'
+2.Tags the release with its name
+3.Back-merges the release into 'develop'
+4.Removes the release branch
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/qunuvp924l138mdtc6i2.png)
+```bash
+git flow release finish RELEASE
+```
+Don't forget to push your tags with `git push origin --tags`
+# Hotfixes
+1.Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version
+2.May be branched off from the corresponding tag on the master branch that marks the production version.
+#### git flow hotfix start
+Like the other git flow commands, a hotfix is started with
+```bash
+git flow hotfix start VERSION [BASENAME]
+```
+The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/s2pafxjhyxq2rcnjf88t.png)
+#### Finish a hotfix
+By finishing a hotfix it gets merged back into develop and master. Additionally, the master merge is tagged with the hotfix version.
+```bash
+git flow hotfix finish VERSION
+```
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/1nkyzxhokyn7lyi3d1bs.png)
+#Commands
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/x83g3oia3zf292r87w70.png)
+
+_Be happy!_
+
+
+<a href="https://www.buymeacoffee.com/mohammadhassani">buymeacoffee!</a>

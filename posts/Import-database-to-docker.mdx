@@ -1,0 +1,68 @@
+---
+title: "Import database to docker with terminal"
+description: "if you are developing with Linux and wanna import database to docker with terminal you can use this tutorial"
+date: "2023-08-01"
+tags: ['mdx','linux','docker','sql','database']
+---
+
+Hey, this is Mohammad Hassani :smiley:
+
+if you are developing with Linux and wanna import database to docker with terminal you can use this tutorial...
+
+###It's just 4 steps
+
+#1) copy database to _data folder:
+first of all you should copy your .sql file to `var/lib/docker/volumes/blog_blogmysql/_data`
+
+in terminal:
+```bash
+cp DATABASE.sql var/lib/docker/volumes/blog_blogmysql/_data
+```
+// Replace DATABASE to your database file name
+
+#2) execute docker
+now your database is ready to import, in this step execute docker in terminal,
+(docker desktop is not supported in Linux but you can install [dockstation](https://dockstation.io/) for Linux, they are similar. and then you can execute there)
+
+also in terminal:
+```bash
+docker exec -it CONTAINERNAME bash
+```
+// Replace CONTAINERNAME to your container name like `site_mysql_1`
+
+#3) Bring up mysql
+now open mysql in terminal:
+```bash
+mysql -uroot -p DATABASENAME
+```
+
+- if you dont have database in container you can use
+```bash
+mysql -uroot -p
+```
+and then:
+```bash
+CREATE DATABASE DATABASENAME;
+```
+// Replace DATABASENAME to your database name
+
+#4) source .sql file
+ok! everything is set now and ready to go...
+in terminal:
+```bash
+source var/lib/mysql/DATABASE.sql
+```
+it maybe take some time depends on your .sql file size and your computer.
+
+## better way
+- you can use this code instead of step 3 and 4:
+```bash
+mysql --init-command="set autocommit=0" DATABASENAME < var/lib/mysql/DATABASE.sql
+``` 
+that's it!
+
+_if you have another way, leave a message :)_
+
+Be happy! ;)
+
+<a href="https://www.buymeacoffee.com/mohammadhassani">buymeacoffee!</a>

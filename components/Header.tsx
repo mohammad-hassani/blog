@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const { pathname } = useRouter();
   return (
     <header className="py-8 flex justify-between items-center">
-      <Link href="/" className="font-bold">
+      <Link href="https://hasani.id.ir" className="font-bold">
         {siteConfig.avatar ? (
           <span className="flex">
             <Image

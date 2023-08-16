@@ -25,6 +25,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <meta name="summary" content="Mohammad Hassani"/>
         <meta name="Classification" content="Personal"/>
         <meta name="abstract" content="about Mohammad Hassani"/>
+        <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
         <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="shortcut icon" href="https://hasani.id.ir/assets/bl33hIcon-01f3a8f7.png?raw=tru" />
